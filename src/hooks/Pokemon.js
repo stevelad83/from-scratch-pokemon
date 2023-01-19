@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { fetchInitialPokemon } from '../services/fetchPokemon.js';
 
 export default function usePokemon() {
   const [pokemon, setPokemon] = useState([]);
@@ -10,5 +11,5 @@ export default function usePokemon() {
     fetchData();
   }, []);
 
-  return;
+  return pokemon;
 }
