@@ -1,30 +1,20 @@
-import React, { useState } from 'react';
-import usePokemon from '../hooks/Pokemon.js';
-import PokeCard from './PokeCard.js';
+import React from 'react';
 
-export default function Select() {
-  const pokemon = usePokemon();
-  console.log(pokemon);
-  const [type, setType] = useState('all');
-
-  const types = [...new Set(pokemon.map(({ type_1 }) => type_1))];
-  console.log(types);
-
-  const filtered = pokemon.filter((poke) => poke.type_1 === type || type === 'all');
+export default function Select({ types, loading }) {
+  console.log('types', types);
 
   return (
-    <main className="container">
-      <select className="select" onChange={(e) => setType(e.target.value)}>
+    <>
+{//if....then...}
+
+      <select className="select">
         <option value="all">All</option>
-        {types.map((type_1) => (
-          <option key={type_1} value={type_1}>
-            {type_1}
+        {types.map((type, i) => (
+          <option key={i} value={type}>
+            {type}
           </option>
         ))}
       </select>
-      {filtered.map((poke) => (
-        <PokeCard key={poke._id} {...poke} />
-      ))}
-    </main>
+    </>
   );
 }

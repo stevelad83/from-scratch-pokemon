@@ -7,22 +7,26 @@ export default function usePokemon() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
     const fetchData = async () => {
+      setLoading(true);
       const data = await fetchInitialPokemon();
+      const typeData = await fetchTypes();
+      const types1 = typeData.map(({ type }) => type);
+      setTypes(types1);
       setPokemon(data);
       setLoading(false);
     };
     fetchData();
   }, []);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetchTypes();
-      setTypes(data);
-    };
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     console.log('dataFromUseEffect', data);
+
+  //     // console.log('typesFromUseEffect', types);
+  //   };
+  //   fetchData();
+  // }, []);
 
   const handleTypeChange = async (type) => {
     setLoading(true);
