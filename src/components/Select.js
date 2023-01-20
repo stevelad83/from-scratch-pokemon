@@ -10,7 +10,7 @@ export default function Select() {
   const types = [...new Set(pokemon.map(({ type_1 }) => type_1))];
   console.log(types);
 
-  const filtered = pokemon.filter((poke) => poke.type === type || type === 'all');
+  const filtered = pokemon.filter((poke) => poke.type_1 === type || type === 'all');
 
   return (
     <main className="container">
