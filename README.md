@@ -11,14 +11,6 @@
 [query, setQuery])
 (useEffect - call Pokemon API & set initial Pokemon state && calls Types API & gets types)
 
--PokeCard
--pokemon
--url_image
--id
--type_1
--type_2
--ability_1
-
     -Controls.js
 
     -Select.js
