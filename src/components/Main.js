@@ -5,7 +5,7 @@ import Select from './Select.js';
 
 export default function Main() {
   const { pokemon, types, loading } = usePokemon();
-  console.log('typesFromMain', types);
+  // console.log('typesFromMain', types);
   return (
     <div>
       <Select {...{ types, loading }} />
