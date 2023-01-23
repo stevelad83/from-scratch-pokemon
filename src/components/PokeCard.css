@@ -1,0 +1,9 @@
+.poke-card {
+  border: solid black 2px;
+  background: linear-gradient(red, blue);
+}
+
+.bio {
+  background-color: white;
+  border-radius: 25px;
+}
