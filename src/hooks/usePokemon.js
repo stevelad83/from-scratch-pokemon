@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { fetchInitialPokemon, fetchPokemon, fetchTypes } from '../services/fetchPokemon.js';
 
 export default function usePokemon() {
